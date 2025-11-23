@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://laravel.com/img/logomark.min.svg" width="70" alt="Laravel Logo">
+</p>
+
+
 # Bike Tours — Laravel Project  
 **Status:** Work in Progress
 
