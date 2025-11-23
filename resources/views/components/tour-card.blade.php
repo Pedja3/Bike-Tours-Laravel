@@ -7,7 +7,7 @@
     <p class="text-gray-400 mb-2">Distance: {{ $tour->distance ?? 'N/A' }} km</p>
     <p class="text-gray-400 mb-2">Location: {{ $tour->location ?? 'Unknown' }}</p>
     <p class="text-gray-400 text-sm mb-4">
-        Created by: {{ $tour->user ? $tour->user->name : 'Unknown' }}
+        Created by: {{ $tour->user ? $tour->user->full_name : 'Unknown' }}
     </p>
 
     @auth
