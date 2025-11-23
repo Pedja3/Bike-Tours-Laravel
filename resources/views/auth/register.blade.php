@@ -5,9 +5,15 @@
         @csrf
 
         <div class="flex flex-col space-y-4">
-            <input type="text" name="name" placeholder="Name" class="w-80 p-2 bg-gray-700 rounded"
-                value="{{ old('name') }}" required>
-            @error('name')
+            <input type="text" name="first_name" placeholder="First name" class="w-80 p-2 bg-gray-700 rounded"
+                value="{{ old('first_name') }}" required>
+            @error('first_name')
+                <p class="text-red-400">{{ $message }}</p>
+            @enderror
+
+            <input type="text" name="last_name" placeholder="Last name" class="w-80 p-2 bg-gray-700 rounded"
+                value="{{ old('last_name') }}" required>
+            @error('last_name')
                 <p class="text-red-400">{{ $message }}</p>
             @enderror
 
