@@ -9,10 +9,18 @@
 Ovo je Laravel projekat za upravljanje biciklističkim turama.  
 Aplikacija omogućava:
 
-- pregled svih tura  
-- kreiranje, uređivanje i brisanje tura (CRUD)  
-- filtriranje po težini (easy, medium, hard)  
-- upravljanje kontakt formom  
+- Pregled svih tura  
+- Kreiranje, uređivanje i brisanje tura (CRUD)  
+- Filtriranje po težini (easy, medium, hard)  
+- Upravljanje kontakt formom
+  
+Plan za budućnost:
+
+- Implementacija Admin panela za upravljanje korisnicima, turama i rezervacijama
+- Dodavanje funkcionalnosti ocenjivanja i komentarisanja tura od strane korisnika
+- Ubacivanje audio i video formata
+
+I još mnogih drugih zanimljivih funkcija :)
 
 Projekat koristi: **Laravel**, **PHP**, **MySQL** i **Blade template sistem**.
 
