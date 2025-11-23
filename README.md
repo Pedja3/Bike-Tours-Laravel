@@ -24,6 +24,8 @@ I još mnogih drugih zanimljivih funkcija :)
 
 Projekat koristi: **Laravel**, **PHP**, **MySQL** i **Blade template sistem**.
 
+Kreator projekta: Predrag Jovanović
+
 ## Live Demo
 
 Možeš pogledati aplikaciju ovde: [Live App](https://tvoj-live-link.com)  
