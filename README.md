@@ -1,7 +1,6 @@
 # Bike Tours Laravel Project
 
 # Bike-Tours-Laravel
-# Bike Tours Laravel Project
 
 <p align="center">
   <a href="https://laravel.com" target="_blank">
