@@ -1,13 +1,18 @@
 @props(['tour'])
 
 <div class="p-6 bg-gray-800 rounded-lg shadow">
-    <h2 class="text-xl font-semibold">{{ $tour->name }}</h2>  
+    <h2 class="text-xl font-semibold">{{ $tour->name }}</h2>
     <p class="mb-4">{{ $tour->description }}</p>
     <p class="text-gray-400 mb-2">Difficulty: {{ ucfirst($tour->difficulty) }}</p>
     <p class="text-gray-400 mb-2">Distance: {{ $tour->distance ?? 'N/A' }} km</p>
     <p class="text-gray-400 mb-2">Location: {{ $tour->location ?? 'Unknown' }}</p>
     <p class="text-gray-400 text-sm mb-4">
-        Created by: {{ $tour->user ? $tour->user->full_name : 'Unknown' }}
+        Created by:
+        @if ($tour->user)
+            {{ $tour->user->first_name }} {{ $tour->user->last_name }}
+        @else
+            Unknown
+        @endif
     </p>
 
     @auth
