@@ -19,7 +19,7 @@ class TourFactory extends Factory
             'description' => fake()->paragraph(),
             'difficulty' => fake()->randomElement($difficulties),
             'distance' => fake()->numberBetween(1, 500),
-            'location' => $this->fake()->city() 
+            'location' => fake()->city() 
         ];
     }
 }
