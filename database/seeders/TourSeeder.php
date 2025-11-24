@@ -8,9 +8,6 @@ use App\Models\Tour;
 
 class TourSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         Tour::factory(50)->create();
