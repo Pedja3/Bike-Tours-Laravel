@@ -10,11 +10,9 @@
 
 <body class="bg-gray-900 text-white">
 
-    <!-- Header -->
     <header class="bg-gray-900 border-b border-gray-700">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
 
-            <!-- Logo -->
             <div class="flex items-center space-x-5">
                 <img src="{{ asset('images/bike.png') }}" alt="Bike Logo" class="w-15 h-10">
                 <a href="/" class="text-xl font-bold text-white mr-12">Bike Tours</a>
@@ -29,9 +27,8 @@
                 </div>
             </div>
 
-            <!-- Navigation Links -->
             <div class="hidden lg:flex items-center space-x-12">
-                <!-- Dropdown -->
+
                 <div id="dropdownButton" class="relative group">
                     <button class="flex items-center gap-x-1 text-sm font-semibold text-white">
                         Tours Difficulty
@@ -41,7 +38,6 @@
                         </svg>
                     </button>
 
-                    <!-- Dropdown content -->
                     <div id="dropdownMenu" class="absolute hidden mt-2 w-48 bg-gray-800 rounded-lg shadow-lg">
                         <a href="{{ route('tours.byDifficulty', 'easy') }}"
                             class="block px-4 py-2 text-sm hover:bg-gray-700">Easy Tours</a>
@@ -84,7 +80,7 @@
 
         </nav>
     </header>
-    <!-- Main Content -->
+
     <main>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             {{ $slot }}
