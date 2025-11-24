@@ -12,9 +12,7 @@ class TourController extends Controller
     {
         $this->middleware('auth')->except(['index', 'show', 'byDifficulty']);
     }
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index(Request $request)
     {
         $difficulty = $request->query('difficulty');
@@ -39,17 +37,11 @@ class TourController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('tours.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -72,9 +64,6 @@ class TourController extends Controller
         return redirect()->route('tours.index')->with('success', 'Tour created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Tour $tour)
     {
         return view('tours.show', [
@@ -82,9 +71,6 @@ class TourController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Tour $tour)
     {
         return view('tours.edit', [
@@ -92,9 +78,6 @@ class TourController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Tour $tour)
     {
         $validated = $request->validate([
@@ -110,9 +93,6 @@ class TourController extends Controller
         return redirect()->route('tours.index')->with('success', 'Tour updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Tour $tour)
     {
         $tour->delete();
