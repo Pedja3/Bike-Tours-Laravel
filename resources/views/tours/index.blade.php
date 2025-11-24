@@ -8,7 +8,6 @@
 
     <h1 class="text-3xl font-bold mb-6">Bike Tours</h1>
 
-    <!-- Search Form -->
     <form method="GET" action="{{ route('tours.index') }}" class="mb-6 flex">
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search tours..."
             class="w-sm px-4 py-2 rounded-l-lg bg-gray-700 text-white focus:outline-none">
@@ -21,7 +20,6 @@
         <p class="text-gray-400 mb-4">Showing {{ ucfirst($selectedDifficulty) }} tours</p>
     @endisset
 
-    <!-- Tours List -->
     <div class="space-y-6">
         @forelse($tours as $tour)
             <x-tour-card :tour="$tour" />
@@ -29,8 +27,7 @@
             <p>No tours found.</p>
         @endforelse
     </div>
-
-    <!-- Pagination -->
+                
     <div class="mt-6">
         {{ $tours->links() }}
     </div>
