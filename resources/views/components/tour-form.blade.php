@@ -1,5 +1,5 @@
 @props([
-    'tour' => null, // Ako je edit, prosleđujemo turu, za create će biti null
+    'tour' => null, // Ako je edit, prosleđujem turu, za create će biti null
     'action', // Ruta na koju forma šalje podatke
     'method' => 'POST', // POST za create, PUT za edit
 ])
