@@ -12,7 +12,8 @@ Jednostavna i moderna Laravel aplikacija za upravljanje biciklističkim turama.
 
 ## Funkcionalnosti
 - Pregled svih tura  
-- CRUD za ture  
+- CRUD za ture
+- Pretraga tura 
 - Filtriranje po težini (easy, medium, hard)
 - Registracija i login/logout korisnika  
 - Kontakt forma za slanje poruka (poruke se čuvaju u bazi)
