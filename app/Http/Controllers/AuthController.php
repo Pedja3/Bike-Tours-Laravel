@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -23,18 +24,13 @@ class AuthController extends Controller
             'password' => 'required|min:6|confirmed'
         ]);
 
-        $user = User::create([
-            'first_name' => $validated['first_name'],
-            'last_name' => $validated['last_name'],
-            'email' => $validated['email'],
-            'password' => Hash::make($validated['password'])
-        ]);
-        
+        $user = User::create($validated);
+      
         Auth::login($user);
 
         $request->session()->regenerate();
 
-        return redirect('/')->with('success', 'Account created!');
+        return redirect('/');
     }
 
     public function showLoginForm()
@@ -49,16 +45,16 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if (Auth::attempt($credentials)) 
+        if (! Auth::attempt($credentials)) 
         {
-            $request->session()->regenerate();
-
-            return redirect('/')->with('success', 'Welcome back');
+            throw ValidationException::withMessages([
+                'email' => 'Credentials do not match'
+            ]);
         }
 
-        return back()->withErrors([
-            'email' => 'Invalid email or password.'
-        ]);
+          $request->session()->regenerate();
+
+          return redirect('/');
     }
 
     public function logout(Request $request)
@@ -67,6 +63,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('success', 'Logged out');
+        return redirect('/');
     }
 }

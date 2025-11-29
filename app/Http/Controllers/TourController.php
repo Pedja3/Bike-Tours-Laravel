@@ -61,7 +61,7 @@ class TourController extends Controller
             'user_id' => Auth::id()
         ]);
 
-        return redirect()->route('tours.index')->with('success', 'Tour created successfully');
+        return redirect()->route('tours.index');
     }
 
     public function show(Tour $tour)
@@ -90,14 +90,14 @@ class TourController extends Controller
 
         $tour->update($validated);
 
-        return redirect()->route('tours.index')->with('success', 'Tour updated successfully');
+        return redirect()->route('tours.index');
     }
 
     public function destroy(Tour $tour)
     {
         $tour->delete();
 
-        return redirect()->route('tours.index')->with('success', 'Tour is deleted');
+        return redirect()->route('tours.index');
     }
 
     public function byDifficulty($difficulty)

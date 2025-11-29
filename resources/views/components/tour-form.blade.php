@@ -35,10 +35,9 @@
         <label class="block mb-1 font-semibold">Difficulty:</label>
         <select name="difficulty" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
             <option value="">Select difficulty</option>
-            <option value="easy" {{ old('difficulty', $tour?->difficulty) == 'easy' ? 'selected' : '' }}>Easy</option>
-            <option value="medium" {{ old('difficulty', $tour?->difficulty) == 'medium' ? 'selected' : '' }}>Medium
-            </option>
-            <option value="hard" {{ old('difficulty', $tour?->difficulty) == 'hard' ? 'selected' : '' }}>Hard</option>
+            <option value="easy" @selected(old('difficulty', $tour?->difficulty) == 'easy')>Easy</option>
+            <option value="medium" @selected(old('difficulty', $tour?->difficulty) == 'medium')>Medium</option>      
+            <option value="hard" @selected(old('difficulty', $tour?->difficulty) == 'hard')>Hard</option>
         </select>
     </div>
 
