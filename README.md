@@ -20,7 +20,7 @@ Jednostavna i moderna Laravel aplikacija za upravljanje biciklističkim turama.
 
 ---
 
-## Planirano
+## Plan za nastavak projekta
 - Admin panel  
 - Komentarisanje i ocenivanje tura  
 - Podrška za audio/video sadržaj  
