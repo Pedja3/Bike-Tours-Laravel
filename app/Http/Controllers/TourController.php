@@ -12,7 +12,7 @@ class TourController extends Controller
     {
         $this->middleware('auth')->except(['index', 'show', 'byDifficulty']);
     }
-    
+
     public function index(Request $request)
     {
         $difficulty = $request->query('difficulty');
@@ -49,7 +49,7 @@ class TourController extends Controller
             'description' => 'nullable|string',
             'difficulty' => 'required|in:easy,medium,hard',
             'distance' => 'required|numeric|min:0',
-            'location' => 'required|string|max:255'
+            'location' => 'required|string|max:255',
         ]);
 
         Tour::create([
@@ -67,12 +67,20 @@ class TourController extends Controller
     public function show(Tour $tour)
     {
         return view('tours.show', [
-            'tour' => $tour
+            'tour' => $tour,
         ]);
+    }
+
+    private function authorizeOwner(Tour $tour)
+    {
+        if (Auth::id() !== $tour->user_id) {
+            abort(403, 'You are not authorized to changes this tour.');
+        }
     }
 
     public function edit(Tour $tour)
     {
+        $this->authorizeOwner($tour);
         return view('tours.edit', [
             'tour' => $tour
         ]);
@@ -80,6 +88,8 @@ class TourController extends Controller
 
     public function update(Request $request, Tour $tour)
     {
+        $this->authorizeOwner($tour);
+
         $validated = $request->validate([
             'name' => 'required|max:255',
             'description' => 'required|string|max:255',
@@ -89,20 +99,20 @@ class TourController extends Controller
         ]);
 
         $tour->update($validated);
-
         return redirect()->route('tours.index');
     }
 
     public function destroy(Tour $tour)
     {
-        $tour->delete();
+        $this->authorizeOwner($tour);
 
+        $tour->delete();
         return redirect()->route('tours.index');
     }
 
     public function byDifficulty($difficulty)
     {
-        $tours = Tour::where('difficulty', $difficulty)->latest()->paginate(6)->withQueryString();
+        $tours = Tour::where('difficulty', $difficulty)->latest()->paginate(5)->withQueryString();
 
         return view('tours.index', [
             'tours' => $tours,

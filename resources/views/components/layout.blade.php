@@ -10,12 +10,12 @@
 
 <body class="bg-gray-900 text-white">
 
-    <header class="bg-gray-900 border-b border-gray-700">
+    <header class="border-b border-gray-700 bg-gray-900">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
 
             <div class="flex items-center space-x-5">
                 <img src="{{ asset('images/bike.png') }}" alt="Bike Logo" class="w-15 h-10">
-                <a href="/" class="text-xl font-bold text-white mr-12">Bike Tours</a>
+                <a href="/" class="mr-12 text-xl font-bold text-white">Bike Tours</a>
             </div>
 
             <div class="hidden md:block">
@@ -27,18 +27,18 @@
                 </div>
             </div>
 
-            <div class="hidden lg:flex items-center space-x-12">
+            <div class="hidden items-center space-x-12 lg:flex">
 
-                <div id="dropdownButton" class="relative group">
+                <div id="dropdownButton" class="group relative">
                     <button class="flex items-center gap-x-1 text-sm font-semibold text-white">
                         Tours Difficulty
-                        <svg class="w-4 h-4 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
+                        <svg class="h-4 w-4 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
                             stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
 
-                    <div id="dropdownMenu" class="absolute hidden mt-2 w-48 bg-gray-800 rounded-lg shadow-lg">
+                    <div id="dropdownMenu" class="absolute mt-2 hidden w-48 rounded-lg bg-gray-800 shadow-lg">
                         <a href="{{ route('tours.byDifficulty', 'easy') }}"
                             class="block px-4 py-2 text-sm hover:bg-gray-700">Easy Tours</a>
                         <a href="{{ route('tours.byDifficulty', 'medium') }}"
@@ -68,15 +68,14 @@
                 @auth
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="text-yellow-400 hover:text-red-500 ml-4">
+                        <button type="submit" class="ml-4 text-yellow-400 hover:text-red-500">
                             Logout
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="hover:text-gray-300 ml-4">Login</a>
-                    <a href="{{ route('register') }}" class="hover:text-gray-300 ml-4">Register</a>
+                    <a href="{{ route('login') }}" class="ml-4 hover:text-gray-300">Login</a>
+                    <a href="{{ route('register') }}" class="ml-4 hover:text-gray-300">Register</a>
                 @endauth
-
 
         </nav>
     </header>
@@ -87,18 +86,18 @@
         </div>
     </main>
 
+    <footer class="space-y-12 bg-gray-900 p-12 text-center text-white">
+        <div class="space-y-8">
+            <p>&copy; 2025 BikeTours</p>
+        </div>
+
+        <div class="flex justify-center space-x-4 bg-gray-900 p-6 text-center text-white">
+            <a href="https://instagram.com" target="_blank" class="hover:text-white">Instagram</a>
+            <a href="https://facebook.com" target="_blank" class="hover:text-white">Facebook</a>
+            <a href="https://tiktok.com" target="_blank" class="hover:text-white">TikTok</a>
+        </div>
+    </footer>
+
 </body>
-
-<footer class="bg-gray-900 text-white p-12 text-center space-y-12">
-    <div class="space-y-8">
-        <p>&copy; 2025 BikeTours</p>
-    </div>
-
-    <div class="bg-gray-900 text-white p-6 text-center flex justify-center space-x-4">
-        <a href="https://instagram.com" target="_blank" class="hover:text-white">Instagram</a>
-        <a href="https://facebook.com" target="_blank" class="hover:text-white">Facebook</a>
-        <a href="https://tiktok.com" target="_blank" class="hover:text-white">TikTok</a>
-    </div>
-</footer>
 
 </html>

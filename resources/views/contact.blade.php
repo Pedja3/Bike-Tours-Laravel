@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="space-y-6 max-w-lg mx-auto">
+    <div class="mx-auto max-w-lg space-y-6">
         <h1 class="text-3xl font-bold text-white">Contact Us</h1>
 
         <p class="text-white">
@@ -7,42 +7,42 @@
         </p>
 
         @if (session('success'))
-            <div class="bg-green-500 text-white p-4 rounded mb-4">
+            <div class="mb-4 rounded bg-green-500 p-4 text-white">
                 {{ session('success') }}
             </div>
         @endif
 
         <form action="{{ route('contact.submit') }}" method="POST" class="space-y-4">
-            @csrf 
+            @csrf
 
             <div>
-                <label for="name" class="block text-white font-semibold">Name</label>
+                <label for="name" class="block font-semibold text-white">Name</label>
                 <input type="text" id="name" name="name"
-                    class="w-full mt-1 px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="mt-1 w-full rounded-lg bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your name" required>
             </div>
 
             <div>
-                <label for="email" class="block text-white font-semibold">Email</label>
+                <label for="email" class="block font-semibold text-white">Email</label>
                 <input type="email" id="email" name="email"
-                    class="w-full mt-1 px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="mt-1 w-full rounded-lg bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your email" required>
             </div>
 
             <div>
-                <label for="message" class="block text-white font-semibold">Message</label>
+                <label for="message" class="block font-semibold text-white">Message</label>
                 <textarea id="message" name="message" rows="5"
-                    class="w-full mt-1 px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="mt-1 w-full rounded-lg bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your message" required></textarea>
             </div>
 
             <button type="submit"
-                class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                class="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700">
                 Send
             </button>
         </form>
 
-        <div class="text-white mt-6">
+        <div class="mt-6 text-white">
             <p><strong>Address:</strong> Cyclist Street 123, Belgrade</p>
             <p><strong>Email:</strong> info@biketours.com</p>
             <p><strong>Phone:</strong> +381 60 123 4567</p>

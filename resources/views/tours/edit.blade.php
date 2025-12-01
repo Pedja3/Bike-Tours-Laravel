@@ -3,4 +3,3 @@
 
     <x-tour-form :tour="$tour" :action="route('tours.update', $tour->id)" method="PUT" />
 </x-layout>
-

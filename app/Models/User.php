@@ -10,12 +10,13 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    
+
     protected $fillable = [
         'first_name',
         'last_name',
         'email',
         'password',
+        'role',
     ];
 
     protected $hidden = [

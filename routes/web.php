@@ -4,6 +4,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TourController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\RatingController;
 
 Route::view('/', 'home');
 Route::view('/about', 'about');

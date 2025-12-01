@@ -25,7 +25,7 @@ class AuthController extends Controller
         ]);
 
         $user = User::create($validated);
-      
+
         Auth::login($user);
 
         $request->session()->regenerate();
@@ -45,16 +45,15 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if (! Auth::attempt($credentials)) 
-        {
+        if (! Auth::attempt($credentials)) {
             throw ValidationException::withMessages([
-                'email' => 'Credentials do not match'
+                'email' => 'Incorrect email or password.'
             ]);
         }
 
-          $request->session()->regenerate();
+        $request->session()->regenerate();
 
-          return redirect('/');
+        return redirect('/');
     }
 
     public function logout(Request $request)
