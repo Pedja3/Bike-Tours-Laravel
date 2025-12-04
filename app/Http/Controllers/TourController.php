@@ -74,7 +74,7 @@ class TourController extends Controller
     private function authorizeOwner(Tour $tour)
     {
         if (Auth::id() !== $tour->user_id) {
-            abort(403, 'You are not authorized to changes this tour.');
+            abort(403);
         }
     }
 

@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Dom\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +18,6 @@ class User extends Authenticatable
         'last_name',
         'email',
         'password',
-        'role',
     ];
 
     protected $hidden = [
@@ -35,5 +36,10 @@ class User extends Authenticatable
     public function tours()
     {
         return $this->hasMany(Tour::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

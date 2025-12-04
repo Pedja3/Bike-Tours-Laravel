@@ -3,7 +3,6 @@
     'action', // Ruta na koju forma šalje podatke
     'method' => 'POST', // POST za create, PUT za edit
 ])
-
 <form
     action="{{ $action }}"
     method="POST"

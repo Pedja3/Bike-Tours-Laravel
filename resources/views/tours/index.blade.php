@@ -36,7 +36,7 @@
 
     <div class="space-y-6">
         @forelse($tours as $tour)
-            <x-tour-card :tour="$tour" />
+            <x-tour-card-summary :tour="$tour" />
         @empty
             <p>No tours found.</p>
         @endforelse

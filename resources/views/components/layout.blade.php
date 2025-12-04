@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
     <title>Bike Tours</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -14,37 +17,77 @@
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
 
             <div class="flex items-center space-x-5">
-                <img src="{{ asset('images/bike.png') }}" alt="Bike Logo" class="w-15 h-10">
-                <a href="/" class="mr-12 text-xl font-bold text-white">Bike Tours</a>
+                <img
+                    src="{{ asset('images/bike.png') }}"
+                    alt="Bike Logo"
+                    class="w-15 h-10"
+                >
+                <a
+                    href="/"
+                    class="mr-12 text-xl font-bold text-white"
+                >Bike Tours</a>
             </div>
 
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-16">
-                    <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                    <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-                    <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
-                    <x-nav-link href="{{ route('tours.index') }}" :active="request()->is('tours*')">Tours</x-nav-link>
+                    <x-nav-link
+                        href="/"
+                        :active="request()->is('/')"
+                    >Home</x-nav-link>
+                    <x-nav-link
+                        href="/about"
+                        :active="request()->is('about')"
+                    >About</x-nav-link>
+                    <x-nav-link
+                        href="/contact"
+                        :active="request()->is('contact')"
+                    >Contact</x-nav-link>
+                    <x-nav-link
+                        href="{{ route('tours.index') }}"
+                        :active="request()->is('tours*')"
+                    >Tours</x-nav-link>
                 </div>
             </div>
 
             <div class="hidden items-center space-x-12 lg:flex">
 
-                <div id="dropdownButton" class="group relative">
+                <div
+                    id="dropdownButton"
+                    class="group relative"
+                >
                     <button class="flex items-center gap-x-1 text-sm font-semibold text-white">
                         Tours Difficulty
-                        <svg class="h-4 w-4 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor"
-                            stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        <svg
+                            class="h-4 w-4 text-gray-400 group-hover:text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19 9l-7 7-7-7"
+                            />
                         </svg>
                     </button>
 
-                    <div id="dropdownMenu" class="absolute mt-2 hidden w-48 rounded-lg bg-gray-800 shadow-lg">
-                        <a href="{{ route('tours.byDifficulty', 'easy') }}"
-                            class="block px-4 py-2 text-sm hover:bg-gray-700">Easy Tours</a>
-                        <a href="{{ route('tours.byDifficulty', 'medium') }}"
-                            class="block px-4 py-2 text-sm hover:bg-gray-700">Medium Tours</a>
-                        <a href="{{ route('tours.byDifficulty', 'hard') }}"
-                            class="block px-4 py-2 text-sm hover:bg-gray-700">Hard Tours</a>
+                    <div
+                        id="dropdownMenu"
+                        class="absolute mt-2 hidden w-48 rounded-lg bg-gray-800 shadow-lg"
+                    >
+                        <a
+                            href="{{ route('tours.byDifficulty', 'easy') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-700"
+                        >Easy Tours</a>
+                        <a
+                            href="{{ route('tours.byDifficulty', 'medium') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-700"
+                        >Medium Tours</a>
+                        <a
+                            href="{{ route('tours.byDifficulty', 'hard') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-700"
+                        >Hard Tours</a>
                     </div>
                 </div>
 
@@ -66,17 +109,28 @@
                 </script>
 
                 @auth
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form
+                        method="POST"
+                        action="{{ route('logout') }}"
+                    >
                         @csrf
-                        <button type="submit" class="ml-4 text-yellow-400 hover:text-red-500">
+                        <button
+                            type="submit"
+                            class="ml-4 text-yellow-400 hover:text-red-500"
+                        >
                             Logout
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="ml-4 hover:text-gray-300">Login</a>
-                    <a href="{{ route('register') }}" class="ml-4 hover:text-gray-300">Register</a>
+                    <a
+                        href="{{ route('login') }}"
+                        class="ml-4 hover:text-gray-300"
+                    >Login</a>
+                    <a
+                        href="{{ route('register') }}"
+                        class="ml-4 hover:text-gray-300"
+                    >Register</a>
                 @endauth
-
         </nav>
     </header>
 
@@ -92,12 +146,23 @@
         </div>
 
         <div class="flex justify-center space-x-4 bg-gray-900 p-6 text-center text-white">
-            <a href="https://instagram.com" target="_blank" class="hover:text-white">Instagram</a>
-            <a href="https://facebook.com" target="_blank" class="hover:text-white">Facebook</a>
-            <a href="https://tiktok.com" target="_blank" class="hover:text-white">TikTok</a>
+            <a
+                href="https://instagram.com"
+                target="_blank"
+                class="hover:text-white"
+            >Instagram</a>
+            <a
+                href="https://facebook.com"
+                target="_blank"
+                class="hover:text-white"
+            >Facebook</a>
+            <a
+                href="https://tiktok.com"
+                target="_blank"
+                class="hover:text-white"
+            >TikTok</a>
         </div>
     </footer>
-
 </body>
 
 </html>

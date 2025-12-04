@@ -12,32 +12,62 @@
             </div>
         @endif
 
-        <form action="{{ route('contact.submit') }}" method="POST" class="space-y-4">
+        <form
+            action="{{ route('contact.submit') }}"
+            method="POST"
+            class="space-y-4"
+        >
             @csrf
 
             <div>
-                <label for="name" class="block font-semibold text-white">Name</label>
-                <input type="text" id="name" name="name"
+                <label
+                    for="name"
+                    class="block font-semibold text-white"
+                >Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
                     class="mt-1 w-full rounded-lg bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your name" required>
+                    placeholder="Your name"
+                    required
+                >
             </div>
 
             <div>
-                <label for="email" class="block font-semibold text-white">Email</label>
-                <input type="email" id="email" name="email"
+                <label
+                    for="email"
+                    class="block font-semibold text-white"
+                >Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
                     class="mt-1 w-full rounded-lg bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your email" required>
+                    placeholder="Your email"
+                    required
+                >
             </div>
 
             <div>
-                <label for="message" class="block font-semibold text-white">Message</label>
-                <textarea id="message" name="message" rows="5"
+                <label
+                    for="message"
+                    class="block font-semibold text-white"
+                >Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
                     class="mt-1 w-full rounded-lg bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your message" required></textarea>
+                    placeholder="Your message"
+                    required
+                ></textarea>
             </div>
 
-            <button type="submit"
-                class="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700">
+            <button
+                type="submit"
+                class="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-700"
+            >
                 Send
             </button>
         </form>
