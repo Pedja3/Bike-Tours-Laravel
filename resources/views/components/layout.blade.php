@@ -29,7 +29,7 @@
             </div>
 
             <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-16">
+                <div class="space-x-16p ml-10 flex items-baseline">
                     <x-nav-link
                         href="/"
                         :active="request()->is('/')"
@@ -122,14 +122,14 @@
                         </button>
                     </form>
                 @else
-                    <a
+                    <x-nav-link
                         href="{{ route('login') }}"
-                        class="ml-4 hover:text-gray-300"
-                    >Login</a>
-                    <a
+                        :active="request()->is('login')"
+                    >Login</x-nav-link>
+                    <x-nav-link
                         href="{{ route('register') }}"
-                        class="ml-4 hover:text-gray-300"
-                    >Register</a>
+                        :active="request()->is('register')"
+                    >Register</x-nav-link>
                 @endauth
         </nav>
     </header>

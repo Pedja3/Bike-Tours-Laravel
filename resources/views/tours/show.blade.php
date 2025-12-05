@@ -57,7 +57,7 @@
         <!-- Dugmad Edit/Delete ture samo za autora ture -->
         @auth
             @if (auth()->id() === $tour->user_id)
-                <div class="mt-4 flex gap-4">
+                <div class="mt-4 flex justify-end gap-4">
                     <a
                         href="{{ route('tours.edit', $tour->id) }}"
                         class="rounded bg-blue-600 px-4 py-2 text-white"

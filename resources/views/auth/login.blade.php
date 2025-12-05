@@ -15,7 +15,7 @@
                 type="email"
                 name="email"
                 placeholder="Email"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value="{{ old('email') }}"
                 autofocus
                 required
@@ -30,7 +30,7 @@
                 type="password"
                 name="password"
                 placeholder="Password"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
             >
         </div>

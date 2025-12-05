@@ -15,7 +15,7 @@
                 type="text"
                 name="first_name"
                 placeholder="First name"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value="{{ old('first_name') }}"
                 autofocus
                 required
@@ -30,7 +30,7 @@
                 type="text"
                 name="last_name"
                 placeholder="Last name"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value="{{ old('last_name') }}"
                 required
             >
@@ -44,7 +44,7 @@
                 type="email"
                 name="email"
                 placeholder="Email"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value="{{ old('email') }}"
                 required
             >
@@ -58,20 +58,20 @@
                 type="password"
                 name="password"
                 placeholder="Password"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
             >
             @error('password')
                 <p class="text-red-400">{{ $message }}</p>
             @enderror
 
-            <label for="password_confirmation">Confirm password</label> 
+            <label for="password_confirmation">Confirm password</label>
             <input
                 id="password_confirmation"
                 type="password"
                 name="password_confirmation"
                 placeholder="Confirm Password"
-                class="w-80 rounded bg-gray-700 p-2"
+                class="w-80 rounded bg-gray-700 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
             >
 
