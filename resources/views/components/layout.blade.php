@@ -116,7 +116,7 @@
                         @csrf
                         <button
                             type="submit"
-                            class="ml-4 text-yellow-400 hover:text-red-500"
+                            class="ml-4 text-red-500 hover:text-yellow-400"
                         >
                             Logout
                         </button>
