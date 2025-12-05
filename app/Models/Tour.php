@@ -22,4 +22,9 @@ class Tour extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function getRatingAttribute()
+    {
+        return $this->comments()->avg('rating') ?? 0;
+    }
 }

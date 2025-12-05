@@ -58,7 +58,7 @@
                     <button class="flex items-center gap-x-1 text-sm font-semibold text-white">
                         Tours Difficulty
                         <svg
-                            class="h-4 w-4 text-gray-400 group-hover:text-white"
+                            class="h-4 w-4 text-gray-400 group-hover:text-yellow-300"
                             fill="none"
                             stroke="currentColor"
                             stroke-width="2"
@@ -149,17 +149,17 @@
             <a
                 href="https://instagram.com"
                 target="_blank"
-                class="hover:text-white"
+                class="text-white hover:text-yellow-300"
             >Instagram</a>
             <a
                 href="https://facebook.com"
                 target="_blank"
-                class="hover:text-white"
+                class="text-white hover:text-yellow-300"
             >Facebook</a>
             <a
                 href="https://tiktok.com"
                 target="_blank"
-                class="hover:text-white"
+                class="text-white hover:text-yellow-300"
             >TikTok</a>
         </div>
     </footer>

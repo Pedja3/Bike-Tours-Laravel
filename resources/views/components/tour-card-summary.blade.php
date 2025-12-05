@@ -8,5 +8,7 @@
         <p class="mb-1 text-sm text-gray-400">Location: {{ $tour->location ?? 'Unknown' }}</p>
         <p class="text-sm text-gray-400">Created by: {{ $tour->user?->first_name ?? 'Unknown' }}
             {{ $tour->user?->last_name ?? '' }}</p>
+        <p class="mb-1 mt-2 text-sm text-yellow-400">Rating: {{ $tour->rating }}
+        </p>
     </a>
 </div>

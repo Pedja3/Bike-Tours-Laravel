@@ -18,7 +18,7 @@ class TourController extends Controller
         $difficulty = $request->query('difficulty');
         $search = $request->query('search');
 
-        $query = Tour::with('user')->latest();
+        $query = Tour::with('user')->withAvg('comments', 'rating')->latest();
 
         if ($difficulty && in_array($difficulty, ['easy', 'medium', 'hard'])) {
             $query->where('difficulty', $difficulty);
@@ -66,8 +66,10 @@ class TourController extends Controller
 
     public function show(Tour $tour)
     {
+        $comments = $tour->comments()->with('user')->paginate(5);
         return view('tours.show', [
             'tour' => $tour,
+            'comments' => $comments,
         ]);
     }
 
@@ -89,7 +91,6 @@ class TourController extends Controller
     public function update(Request $request, Tour $tour)
     {
         $this->authorizeOwner($tour);
-
         $validated = $request->validate([
             'name' => 'required|max:255',
             'description' => 'required|string|max:255',
@@ -105,7 +106,6 @@ class TourController extends Controller
     public function destroy(Tour $tour)
     {
         $this->authorizeOwner($tour);
-
         $tour->delete();
         return redirect()->route('tours.index');
     }

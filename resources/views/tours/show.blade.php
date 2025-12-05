@@ -2,6 +2,7 @@
     <div class="rounded-lg bg-gray-800 p-6 shadow-lg">
         <!-- Tura info -->
         <h1 class="mb-4 text-3xl font-bold text-white">{{ $tour->name }}</h1>
+        </p>
         <p class="mb-6 text-gray-300">{{ $tour->description }}</p>
         <p class="mb-2 text-gray-400"><strong>Difficulty:</strong> {{ ucfirst($tour->difficulty) }}</p>
         <p class="mb-2 text-gray-400"><strong>Distance:</strong> {{ $tour->distance ?? 'N/A' }} km</p>
@@ -24,8 +25,9 @@
                 @endif
             </div>
         @empty
-            <p class="text-gray-400">No comments yet.</p>
+            <p class="text-gray-400">No comments and rating yet.</p>
         @endforelse
+        {{ $comments->links() }}
         <!-- Forma za dodavanje komentara (svi ulogovani korisnici mogu komentarisati) -->
         @auth
             <form
@@ -60,7 +62,7 @@
                 <div class="mt-4 flex justify-end gap-4">
                     <a
                         href="{{ route('tours.edit', $tour->id) }}"
-                        class="rounded bg-blue-600 px-4 py-2 text-white"
+                        class="rounded bg-blue-600 px-2 py-2 text-sm text-white hover:bg-blue-800"
                     >
                         Edit Tour
                     </a>
@@ -72,7 +74,7 @@
                         @method('DELETE')
                         <button
                             type="submit"
-                            class="rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+                            class="rounded bg-red-600 px-2 py-2 text-sm text-white hover:bg-red-700"
                         >
                             Delete Tour
                         </button>
