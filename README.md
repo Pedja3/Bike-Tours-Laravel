@@ -6,37 +6,44 @@
 # Bike Tours — Laravel Project  
 **Status:** Work in Progress
 
-Jednostavna i moderna Laravel aplikacija za upravljanje biciklističkim turama.
+A simple and modern Laravel application for creating, managing, and exploring bicycle tours.
 
 ---
 
-## Funkcionalnosti
-- CRUD za ture koristeći Eloquent ORM i migrations
-- Autentikacija korisnika (registracija, login/logout)
-- Filtriranje tura po težini (easy, medium, hard)
-- Kontakt forma sa čuvanjem poruka u bazi
-- Pregled svih tura
-- Pretraga tura
-- Komentarisanje i ocenivanje tura 
-
-
----
-
-## Plan za nastavak projekta
-- Admin panel  
-- Podrška za audio/video sadržaj  
-- Dalje proširenje funkcionalnosti  
+## Features
+- CRUD operations for tours using Eloquent ORM and database migrations
+- User authentication (registration, login, logout)
+- Tour filtering by difficulty (easy, medium, hard)
+- Contact form with message storage in the database
+- Browse all tours
+- Tour search functionality
+- Tour comments and ratings
 
 ---
 
-## Tehnologije
-**Laravel · PHP · MySQL · Blade**
+## Roadmap
+
+- Admin panel for managing tours and users
+- Support for audio and video content in tours
+- Further feature expansion and additional modules
+
+---
+
+### Tech Stack
+- ⚙️ Laravel 12  
+- 🐘 PHP 8.4  
+- 🗄️ MySQL  
+- 🎨 Blade templating
+- 💅 Tailwind CSS
+- 📦 Composer  
+- 🧩 Eloquent ORM
+- 🟧 TablePlus (database management)
 
 ## Autor: Predrag Jovanović
 
 ---
 
-## Instalacija
+## Installation
 ```bash
 git clone git@github.com:Pedja3/Bike-Tours-Laravel.git
 cd Bike-Tours-Laravel
