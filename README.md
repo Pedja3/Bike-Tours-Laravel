@@ -39,7 +39,7 @@ A simple and modern Laravel application for creating, managing, and exploring bi
 - 🧩 Eloquent ORM
 - 🟧 TablePlus (database management)
 
-## Autor: Predrag Jovanović
+## Author: Predrag Jovanović
 
 ---
 
