@@ -27,7 +27,9 @@
         @empty
             <p class="text-gray-400">No comments and rating yet.</p>
         @endforelse
-        {{ $comments->links() }}
+        <div class="mt-6">
+            {{ $comments->links() }}
+        </div>
         <!-- Forma za dodavanje komentara (svi ulogovani korisnici mogu komentarisati) -->
         @auth
             <form

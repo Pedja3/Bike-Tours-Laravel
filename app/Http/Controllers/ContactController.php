@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMessageDelivered;
 
 class ContactController extends Controller
 {
@@ -21,6 +23,8 @@ class ContactController extends Controller
         ]);
 
         Contact::create($validated);
+
+        Mail::to($validated['email'])->send(new ContactMessageDelivered($validated));
 
         return redirect()->back()->with('success', 'Your message has been sent!');
     }
