@@ -14,7 +14,8 @@ A simple and modern Laravel application for creating, managing, and exploring bi
 - CRUD operations for tours using Eloquent ORM and database migrations
 - User authentication (registration, login, logout)
 - Tour filtering by difficulty (easy, medium, hard)
-- Contact form with message storage in the database
+- Contact form with message storage in the database and automatic user
+  confirmation emails
 - Browse all tours
 - Tour search functionality
 - Tour comments and ratings
